@@ -6,11 +6,17 @@ import Todo from './Todo';
 class TodosContainer extends Component {
 
   renderTodos = () => {
-    return this.props.todos.map((todo) => (
-      <Todo delete={this.props.delete} key={todo.id} text={todo.text} />
-    ));
-  };
-  
+    console.log(this.props.todos);
+    return this.props.todos.map(todo => <Todo delete={this.props.delete} key={todo.id} todo={todo} />)
+  }
+
+  // alternate. more common?
+  // renderTodos = () => {
+  //   return this.props.todos.map((todo) => (
+  //     <Todo todo={todo} key={todo.id} delete={this.props.delete} />
+  //   ));
+  // };
+
   render() {
     return(
       <ol>
